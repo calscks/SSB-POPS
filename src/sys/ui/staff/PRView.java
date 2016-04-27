@@ -28,6 +28,7 @@ public class PRView extends JFrame implements MainInterface {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(true);
+        this.setTitle("View Purchase Requisition");
     }
     
     private void initComponents() {

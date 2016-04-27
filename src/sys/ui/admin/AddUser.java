@@ -29,6 +29,7 @@ public class AddUser extends JFrame implements MainInterface {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(true);
+        this.setTitle("Modify User");
     }
     
     private void initComponents() {

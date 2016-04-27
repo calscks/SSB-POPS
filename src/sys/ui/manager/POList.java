@@ -26,6 +26,7 @@ public class POList extends JFrame implements MainInterface {
     public POList() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Generate List of Purchase Order");
     }
 
     private void initComponents() {

@@ -36,6 +36,7 @@ public class MainUI extends JFrame implements MainInterface{
             e.printStackTrace();
         }
         this.setLocationRelativeTo(null);
+        this.setTitle("SSB Purchase Order Process System");
     }
 
     //initialize components

@@ -29,6 +29,7 @@ public class PurchaseOrder extends JFrame implements MainInterface {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(true);
+        this.setTitle("Create Purchase Order");
     }
 
     private void initComponents() {

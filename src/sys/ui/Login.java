@@ -34,6 +34,8 @@ import java.sql.SQLException;
         this.getRootPane().setDefaultButton(btn_login); //me trying to make login button
         //to default button that accepts keyboard enter
 
+        this.setTitle("Login");
+
         //very first db initialisation
         DBConnection db = new DBConnection("DAT.ssb");
         db.closeCon();
