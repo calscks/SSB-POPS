@@ -7,6 +7,7 @@ import sys.ctrl.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
@@ -167,6 +168,9 @@ public class POList extends JFrame implements MainInterface {
     public void mainFunctions() {
         table_PO.setModel(new FillTable().modelPOList());
         table_PO.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        PlainDocument doc = (PlainDocument) tf_search.getDocument();
+        doc.setDocumentFilter(new Filter(RegexType.DIGIT.getRegexExp()));
 
         lbl_amount.setText("0.00");
 

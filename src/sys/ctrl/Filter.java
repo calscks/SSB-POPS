@@ -19,11 +19,17 @@ d.p. in the verify method below.
 
 To use:
 PlainDocument doc = (PlainDocument) textfield.getDocument();
-doc.setDocumentFilter(new PriceDoc());
-Applies to price.
+doc.setDocumentFilter(new Filter(RegexType enumeration));
+Uses enum RegexPrice to perform at its best.
  */
 
-public class PriceDoc extends DocumentFilter {
+public class Filter extends DocumentFilter {
+
+    String regex;
+
+    public Filter(String regex){
+        this.regex = regex;
+    }
 
     @Override
     public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
@@ -37,16 +43,7 @@ public class PriceDoc extends DocumentFilter {
     }
 
     private boolean verify(String text) {
-        return text.matches("^[0-9]+[.]?[0-9]?[0-9]?$");
-        /*
-        Same as:
-        if (text.matches("^[0-9]+[.]?[0-9]?[0-9]?$"))
-            return true;
-        else
-            return false;
-
-        due to the matches method is also returning a boolean, hence it can be simplified.
-         */
+        return text.matches(regex);
     }
 
     @Override

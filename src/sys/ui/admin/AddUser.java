@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
@@ -267,6 +268,10 @@ public class AddUser extends JFrame implements MainInterface {
         eEnablement(false);
 
         table_Emp.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        PlainDocument doc = (PlainDocument) tf_empID.getDocument();
+
+        doc.setDocumentFilter(new Filter(RegexType.ALPHANUMERIC.getRegexExp()));
 
         cbox_eRole.addItem("Admin");
         cbox_eRole.addItem("Manager");

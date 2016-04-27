@@ -577,8 +577,24 @@ public class MainUI extends JFrame implements MainInterface{
 
         PlainDocument doc = (PlainDocument) tf_iPrice.getDocument();
 
-        //uses PriceDoc class created by me to verify price
-        doc.setDocumentFilter(new PriceDoc());
+        //uses Filter class created by me to verify inputs, then uses RegexType enums to get the regex strings
+        doc.setDocumentFilter(new Filter(RegexType.PRICE.getRegexExp()));
+
+        PlainDocument doc1 = (PlainDocument) tf_iCode.getDocument();
+        PlainDocument doc2 = (PlainDocument) tf_iName.getDocument();
+        PlainDocument doc3 = (PlainDocument) tf_sid.getDocument();
+        PlainDocument doc4 = (PlainDocument) tf_sfname.getDocument();
+        PlainDocument doc5 = (PlainDocument) tf_slname.getDocument();
+        PlainDocument doc6 = (PlainDocument) tf_postcode.getDocument();
+
+        doc1.setDocumentFilter(new Filter(RegexType.ALPHANUMERIC.getRegexExp()));
+        doc2.setDocumentFilter(new Filter(RegexType.ALPHANUMSPACE.getRegexExp()));
+        doc3.setDocumentFilter(new Filter(RegexType.ALPHANUMERIC.getRegexExp()));
+        doc4.setDocumentFilter(new Filter(RegexType.ALPHANUMSPACE.getRegexExp()));
+        doc5.setDocumentFilter(new Filter(RegexType.ALPHANUMSPACE.getRegexExp()));
+        doc6.setDocumentFilter(new Filter(RegexType.ALPHANUMERIC.getRegexExp()));
+
+
 
         tf_iCode.addKeyListener(new KeyAdapter() {
             @Override

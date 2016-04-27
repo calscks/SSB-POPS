@@ -9,6 +9,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
@@ -219,6 +220,9 @@ public class PurchaseReq extends JFrame implements MainInterface {
         btn_iAddProperty();
 
         cbox_iCode.addItemListener(this::itemCBoxSelection);
+
+        PlainDocument doc = (PlainDocument) tf_iQuantity.getDocument();
+        doc.setDocumentFilter(new Filter(RegexType.DIGIT.getRegexExp()));
 
         tf_iQuantity.getDocument().addDocumentListener(new DocumentListener() {
             @Override
