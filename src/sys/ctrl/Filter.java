@@ -14,6 +14,7 @@ Courtesy of Hovercraft Full Of Eels on Stack Overflow:
 http://stackoverflow.com/questions/11093326/restricting-jtextfield-input-to-integers
 
 Modified for my own needs.
+
 Uses regular expression to match any number before decimal place, and limit only 2
 d.p. in the verify method below.
 

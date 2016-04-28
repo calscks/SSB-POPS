@@ -1,5 +1,9 @@
 package sys.ctrl;
 
+/**
+ * @author CK Seong
+ */
+
 public enum RegexType {
     DIGIT {
         @Override

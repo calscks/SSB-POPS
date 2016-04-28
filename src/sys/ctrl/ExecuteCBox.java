@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * @author CK Seong
+ */
+
 /*
 Have to do this to prevent any highlighted duplications on goddamn IntelliJ
 As well as maintainable

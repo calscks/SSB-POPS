@@ -108,6 +108,7 @@ public class DBConnection {
         }
     }
 
+    //close the connection, after queries/instructions execution this method is highly recommended to be called
     public void closeCon() {
         if (statement != null) try {
             statement.close();

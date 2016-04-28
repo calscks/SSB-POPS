@@ -674,17 +674,17 @@ public class MainUI extends JFrame implements MainInterface{
             }
         });
 
-        //method referencing
-        menu_PR.addActionListener(this::menu_PRAction);
-
-        menu_viewPR.addActionListener(this::menu_viewPRAction);
-
         menu_add.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 menu_addAction(e);
             }
         });
+
+        //method referencing
+        menu_PR.addActionListener(this::menu_PRAction);
+
+        menu_viewPR.addActionListener(this::menu_viewPRAction);
 
         menu_PO.addActionListener(this::menu_POAction);
 
@@ -952,6 +952,7 @@ public class MainUI extends JFrame implements MainInterface{
                 return;
 
             query = "SELECT SupplierID FROM Supplier";
+            //create a new instance of DBConnection
             DBConnection db = new DBConnection("DAT.ssb");
 
             try {
@@ -968,7 +969,7 @@ public class MainUI extends JFrame implements MainInterface{
             } catch (SQLException e1) {
                 e1.printStackTrace();
             } finally {
-                db.closeCon();
+                db.closeCon(); //called closeCon method from DBConnection to close the connection
             }
 
 

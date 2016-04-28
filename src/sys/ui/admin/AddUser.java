@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 /**
- * @author User
+ * @author CK Seong
  */
 public class AddUser extends JFrame implements MainInterface {
 
