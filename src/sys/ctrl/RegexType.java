@@ -4,6 +4,9 @@ package sys.ctrl;
  * @author CK Seong
  */
 
+/*RegexType enum, use it with Filter class. Using it is as simple as:
+* PlainDocument doc = (PlainDocument) textfield.getDocument();
+* doc.setDocumentFilter(new Filter(RegexType.DIGIT.getRegexExp()));*/
 public enum RegexType {
     DIGIT {
         @Override

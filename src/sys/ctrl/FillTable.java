@@ -93,6 +93,7 @@ public class FillTable {
         };
     }
 
+    //for Generate PO's table
     public DefaultTableModel modelPOGenerate() {
         return new DefaultTableModel(
                 new Object[][]{
@@ -113,6 +114,7 @@ public class FillTable {
         };
     }
 
+    //for LPO's table
     public DefaultTableModel modelPOList() {
         return new DefaultTableModel(
                 new Object[][]{

@@ -231,6 +231,7 @@ public class POList extends JFrame implements MainInterface {
         });
     }
 
+    //generate report according to different suppliers
     private void genClick(ActionEvent e){
         if (table_PO.getModel().getRowCount() == 0){
             JOptionPane.showMessageDialog(this, "No purchase order can be printed.",
@@ -245,7 +246,7 @@ public class POList extends JFrame implements MainInterface {
                 "INNER JOIN PurchaseReq pr ON po.PONo = pr.ORNo INNER JOIN Item i ON " +
                 "pr.ItemCode = i.ItemCode WHERE po.PONo = " + poNo + " AND i.SupplierID = '" + supplier +
                 "'";
-        genReport(query);
+        genReport(query); //usage of report generation method
 
     }
 
@@ -265,6 +266,7 @@ public class POList extends JFrame implements MainInterface {
 
     }
 
+    //report generation method that receive string as parameter (queries)
     private void genReport(String query){
         new SwingWorker<Void, Void>(){
             @Override
@@ -272,7 +274,6 @@ public class POList extends JFrame implements MainInterface {
 
                 DBConnection db = new DBConnection("DAT.ssb");
                 try {
-                    publish();
                     ResultSet rs = db.executeQuery(query);
                     JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(rs);
                     JasperReport jasperReport;
@@ -294,6 +295,7 @@ public class POList extends JFrame implements MainInterface {
         }.execute();
     }
 
+    //button disable property
     private void btn_searchProperty(){
         ButtonModel model = btn_search.getModel();
         Document doc = tf_search.getDocument();

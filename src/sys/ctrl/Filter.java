@@ -43,6 +43,7 @@ public class Filter extends DocumentFilter {
         }
     }
 
+    /*regular expression is required to be used here. Use with RegexType enums*/
     private boolean verify(String text) {
         return text.matches(regex);
     }
